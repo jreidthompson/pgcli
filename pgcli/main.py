@@ -1079,7 +1079,7 @@ class PGCli:
                     # Render \t as 4 spaces instead of "^I"
                     TabsProcessor(char1=" ", char2=" "),
                 ],
-                auto_suggest=AutoSuggestFromHistory(),
+                #auto_suggest=AutoSuggestFromHistory(),
                 tempfile_suffix=".sql",
                 # N.b. pgcli's multi-line mode controls submit-on-Enter (which
                 # overrides the default behaviour of prompt_toolkit) and is
@@ -1087,7 +1087,7 @@ class PGCli:
                 # controls layout/display of the prompt/buffer
                 multiline=True,
                 history=history,
-                completer=ThreadedCompleter(DynamicCompleter(lambda: self.completer)),
+                #completer=ThreadedCompleter(DynamicCompleter(lambda: self.completer)),
                 complete_while_typing=True,
                 style=style_factory(self.syntax_style, self.cli_style),
                 include_default_pygments_style=False,
